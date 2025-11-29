@@ -1,0 +1,10 @@
+{
+  "homepage": "https://github.com/Gameking1happy-Development/GK1H-Mod-Template",
+  "1.21.1": {
+    "21.1.1.0": "Release."
+  },
+  "promos": {
+    "1.21.1-latest": "21.1.1.0",
+    "1.21.1-recommended": "21.1.1.0"
+  }
+}
