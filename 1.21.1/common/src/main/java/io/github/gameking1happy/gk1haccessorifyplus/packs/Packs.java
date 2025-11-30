@@ -33,7 +33,7 @@ public class Packs implements AddPacks {
      * @return Prepends with "unique/" if {@link me.pajic.accessorify.config.SlotMode#UNIQUE_SLOT}, otherwise prepends with "default/".
      */
     public static @NotNull String prependPath(@NotNull String path) {
-        return (Main.CONFIG.slotMode.get() == UNIQUE_SLOT) ? "unique/" : "default/" + path;
+        return (Main.CONFIG.slotMode.get() == UNIQUE_SLOT) ? "unique/" + path : "default/" + path;
     }
     /**
      * @return Returns the mod ID.
