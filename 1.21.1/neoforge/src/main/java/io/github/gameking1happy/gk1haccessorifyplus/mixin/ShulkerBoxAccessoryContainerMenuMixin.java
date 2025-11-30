@@ -19,8 +19,11 @@ import static io.github.gameking1happy.gk1hcore.compat.CompatFlags.*;
 /**
  * Menu compat.
  */
-@Mixin(me.pajic.accessorify.menu.ShulkerBoxAccessoryContainerMenu.class)
+@Mixin(ShulkerBoxAccessoryContainerMenu.class)
 public class ShulkerBoxAccessoryContainerMenuMixin {
+    @Shadow
+    @Final
+    private ItemStack shulker;
     /**
      * @param original Original value.
      * @param i IDK.
@@ -33,7 +36,4 @@ public class ShulkerBoxAccessoryContainerMenuMixin {
     public @Nullable AbstractContainerMenu RSBreturn(AbstractContainerMenu original, int i, @NotNull Inventory inventory, @NotNull Player player) {
         return (ReinfShu && GK1HTags) ? ReinfShulkerCompat.createMenu(i, inventory, (ShulkerBoxAccessoryContainerMenu) (Object) this, shulker.getItem()) : original;
     }
-    @Shadow
-    @Final
-    private ItemStack shulker;
 }

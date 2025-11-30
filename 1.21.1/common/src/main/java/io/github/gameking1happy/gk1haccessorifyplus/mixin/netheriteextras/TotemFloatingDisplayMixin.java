@@ -4,7 +4,6 @@ import com.moulberry.mixinconstraints.annotations.IfModLoaded;
 import me.pajic.accessorify.Main;
 import me.pajic.accessorify.util.ModUtil;
 import net.minecraft.client.multiplayer.ClientPacketListener;
-import net.minecraft.world.InteractionHand;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import org.spongepowered.asm.mixin.Mixin;
@@ -28,16 +27,11 @@ public class TotemFloatingDisplayMixin {
             cancellable = true
     )
     private static void onGetActiveTotemOfUndying(Player player, CallbackInfoReturnable<ItemStack> cir) {
-        InteractionHand[] hands = InteractionHand.values();
-
-        for (InteractionHand hand : hands) {
-            if (Main.CONFIG.accessorySettings.totemOfUndyingAccessory.get()) {
-                ItemStack itemStack = ModUtil.getAccessoryStack(player, ModItems.TOTEM_OF_NEVERDYING).right();
-                if (itemStack.is(ModItems.TOTEM_OF_NEVERDYING)) {
-                    cir.setReturnValue(itemStack);
-                }
+        if (Main.CONFIG.accessorySettings.totemOfUndyingAccessory.get()) {
+            ItemStack itemStack = ModUtil.getAccessoryStack(player, ModItems.TOTEM_OF_NEVERDYING).right();
+            if (itemStack.is(ModItems.TOTEM_OF_NEVERDYING)) {
+                cir.setReturnValue(itemStack);
             }
-
         }
     }
 }
