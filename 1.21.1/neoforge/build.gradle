@@ -64,7 +64,8 @@ dependencies {
     runtimeOnly("atonkish.reinfshulker:reinforced-shulker-boxes:${rsb_version}"){ exclude group: "atonkish.reinfchest" exclude group: "com.misterpemodder" exclude group: "net.fabricmc" exclude group: "net.fabricmc.fabric-api" exclude group: "com.terraformersmc", module: "modmenu"}
     runtimeOnly("io.wispforest:owo-lib-neoforge:${owo_version}")
     compileOnly(rootProject.project.files(".gradle/loom-cache/remapped_mods/remapped/maven/modrinth/netherite-extras-8f637a66").getAsFileTree())
-    compileOnly(rootProject.project.files(".gradle/loom-cache/remapped_mods/remapped/atonkish").getAsFileTree())
+    compileOnly(rootProject.project.files(".gradle/loom-cache/remapped_mods/remapped/atonkish/reinfshulker/reinforced-shulker-boxes-8f637a66/3.2.1+1.21.1/reinforced-shulker-boxes-8f637a66-3.2.1+1.21.1.jar"))
+    compileOnly(rootProject.project.files(".gradle/loom-cache/remapped_mods/remapped/atonkish/reinfcore/reinforced-core-8f637a66/4.0.2+1.21.1/reinforced-core-8f637a66-4.0.2+1.21.1.jar"))
     compileOnly(rootProject.project.files(".gradle/loom-cache/remapped_mods/remapped/me/shedaniel/cloth").getAsFileTree())
     runtimeOnly("org.sinytra.forgified-fabric-api:forgified-fabric-api:${ffapi_version}")
     runtimeOnly("maven.modrinth:connector-extras:${connector_extras_version}")
