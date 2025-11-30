@@ -1,4 +1,5 @@
 //file:noinspection GrUnresolvedAccess
+//file:noinspection ForeignDelegate
 plugins {
     // see https://fabricmc.net/develop/ for new versions
     id 'fabric-loom' version '1.13-SNAPSHOT' apply false
@@ -7,6 +8,10 @@ plugins {
 }
 subprojects {
     repositories {
+        mavenCentral()
+        maven { url 'https://maven.wispforest.io/releases' }
+        maven { url 'https://maven.su5ed.dev/releases' }
+        maven { url 'https://maven.shedaniel.me/' }
         maven {
             name = "FzzyMaven"
             url = "https://maven.fzzyhmstrs.me/"
@@ -14,6 +19,23 @@ subprojects {
         maven {
             name = "GK1H Mod Resources"
             url = "https://raw.githubusercontent.com/Gameking1happy-Development/Mod-Resources/main/maven/"
+        }
+        maven {
+            name = "oωo (owo-lib)"
+            url = "https://maven.wispforest.io/releases/" }
+        maven {
+            url "https://raw.githubusercontent.com/Aton-Kish/mcmod/maven"
+        }
+        exclusiveContent {
+            forRepository {
+                maven {
+                    name = "Modrinth"
+                    url = "https://api.modrinth.com/maven"
+                }
+            }
+            filter {
+                includeGroup "maven.modrinth"
+            }
         }
     }
 }

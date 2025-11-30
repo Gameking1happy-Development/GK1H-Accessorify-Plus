@@ -4,16 +4,16 @@
 plugins {
     id 'multiloader-loader'
     id 'net.neoforged.moddev'
+    id 'org.sinytra.adapter.userdev' version '1.2.1-SNAPSHOT'
 }
 repositories {
     maven {
         url = "https://thedarkcolour.github.io/KotlinForForge/"
     }
-}
-dependencies {
-    api("io.github.gameking1happy.gk1hcore:gk1hcore-neoforge-1.21.1:${gk1hcore_version}")
-    accessTransformers("io.github.gameking1happy.gk1hcore:gk1hcore-neoforge-1.21.1:${gk1hcore_version}")
-    implementation("me.fzzyhmstrs:fzzy_config:${fzzy_config_version}+neoforge")
+    maven {
+        name = "Sinytra"
+        url = "https://maven.sinytra.org/"
+    }
 }
 neoForge {
     version = neoforge_version
@@ -53,4 +53,23 @@ neoForge {
             sourceSet sourceSets.main
         }
     }
+}
+dependencies {
+    implementation(jarJar("com.moulberry:mixinconstraints:1.1.0"))
+    api("io.github.gameking1happy.gk1hcore:gk1hcore-neoforge-1.21.1:${gk1hcore_version}")
+    accessTransformers("io.github.gameking1happy.gk1hcore:gk1hcore-neoforge-1.21.1:${gk1hcore_version}")
+    api("io.github.gameking1happy.gk1htags:gk1htags-neoforge-1.21.1:${gk1htags_version}")
+    implementation("me.fzzyhmstrs:fzzy_config:${fzzy_config_version}+neoforge")
+    runtimeOnly("maven.modrinth:netherite-extras:${netheriteextras_version}")
+    runtimeOnly("atonkish.reinfshulker:reinforced-shulker-boxes:${rsb_version}"){ exclude group: "atonkish.reinfchest" exclude group: "com.misterpemodder" exclude group: "net.fabricmc" exclude group: "net.fabricmc.fabric-api" exclude group: "com.terraformersmc", module: "modmenu"}
+    runtimeOnly("io.wispforest:owo-lib-neoforge:${owo_version}")
+    compileOnly(rootProject.project.files(".gradle/loom-cache/remapped_mods/remapped/maven/modrinth/netherite-extras-8f637a66").getAsFileTree())
+    compileOnly(rootProject.project.files(".gradle/loom-cache/remapped_mods/remapped/atonkish").getAsFileTree())
+    compileOnly(rootProject.project.files(".gradle/loom-cache/remapped_mods/remapped/me/shedaniel/cloth").getAsFileTree())
+    runtimeOnly("org.sinytra.forgified-fabric-api:forgified-fabric-api:${ffapi_version}")
+    runtimeOnly("maven.modrinth:connector-extras:${connector_extras_version}")
+    runtimeOnly("thedarkcolour:kotlinforforge-neoforge:5.10.0")
+    implementation("maven.modrinth:accessorify:${accessorify_version}+1.21.1-neoforge")
+    implementation("io.wispforest:accessories-neoforge:${accessories_version}+1.21.1")
+    additionalRuntimeClasspath("org.sinytra:connector:${connector_version}")
 }

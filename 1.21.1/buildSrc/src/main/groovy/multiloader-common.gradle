@@ -82,7 +82,16 @@ processResources {
             'mod_issue_url'                : mod_issue_url,
             'fzzy_config_version'          : fzzy_config_version,
             'gk1hcore_version'             : gk1hcore_version,
-            'modmenu_version'              : modmenu_version
+            'gk1htags_version'             : gk1htags_version,
+            'modmenu_version'              : modmenu_version,
+            'connector_version'            : connector_version,
+            'ffapi_version'                : ffapi_version,
+            'connector_extras_version'     : connector_extras_version,
+            'netheriteextras_version'      : netheriteextras_version,
+            'owo_version'                  : owo_version,
+            'accessorify_version'          : accessorify_version,
+            'accessories_version'          : accessories_version,
+            'rsb_version'                  : rsb_version
     ]
 
     filesMatching(['pack.mcmeta', 'fabric.mod.json', 'META-INF/mods.toml', 'META-INF/neoforge.mods.toml', '*.mixins.json']) {
