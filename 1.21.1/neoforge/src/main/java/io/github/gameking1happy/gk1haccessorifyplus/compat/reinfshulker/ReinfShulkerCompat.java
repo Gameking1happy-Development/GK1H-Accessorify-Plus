@@ -9,6 +9,7 @@ import net.minecraft.world.inventory.AbstractContainerMenu;
 import net.minecraft.world.inventory.ShulkerBoxMenu;
 import net.minecraft.world.item.DyeColor;
 import net.minecraft.world.item.Item;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.Map;
 
@@ -35,7 +36,7 @@ public class ReinfShulkerCompat {
      * @param shulker Shulker.
      * @return Menu.
      */
-    public static AbstractContainerMenu createMenu(int syncId, Inventory inventory, ShulkerBoxAccessoryContainerMenu menu, Item shulker) {
+    public static @NotNull AbstractContainerMenu createMenu(int syncId, Inventory inventory, ShulkerBoxAccessoryContainerMenu menu, Item shulker) {
         ReinforcingMaterial material = null;
         for (Map.Entry<ReinforcingMaterial, Map<DyeColor, Item>> entry : ModItems.REINFORCED_SHULKER_BOX_MAP.entrySet()) {
             if (entry.getValue().containsValue(shulker)) {

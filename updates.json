@@ -2,10 +2,11 @@
   "homepage": "https://github.com/Gameking1happy-Development/GK1H-Accessorify-Plus",
   "1.21.1": {
     "21.1.1.0": "Release.",
-    "21.1.1.0-hotfix": "Fix Netherite Extras compat crashing in unique slot mode due to forgetting path variable."
+    "21.1.1.0-hotfix": "Fix Netherite Extras compat crashing in unique slot mode due to forgetting path variable.",
+    "21.1.1.1": "Minor changes."
   },
   "promos": {
-    "1.21.1-latest": "21.1.1.0-hotfix",
-    "1.21.1-recommended": "21.1.1.0-hotfix"
+    "1.21.1-latest": "21.1.1.1",
+    "1.21.1-recommended": "21.1.1.1"
   }
 }

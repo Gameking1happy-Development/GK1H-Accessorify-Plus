@@ -11,6 +11,7 @@ import net.minecraft.world.item.ItemStack;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.neoforge.registries.ModifyRegistriesEvent;
 import net.neoforged.neoforge.registries.callback.AddCallback;
+import org.jetbrains.annotations.NotNull;
 
 /**
  * Totem of Neverdying compat.
@@ -22,7 +23,7 @@ public class TotemOfNeverdyingAccessory implements SlotCopyingAccessory {
      * @param event ModifyRegistriesEvent.
      */
     @SubscribeEvent
-    public static void init(ModifyRegistriesEvent event) {
+    public static void init(@NotNull ModifyRegistriesEvent event) {
         event.getRegistry(Registries.ITEM).addCallback((AddCallback<Item>) (registry, id, key, value) -> {
             if (key.location().equals(MultiVersionUtil.parse("netheriteextras:totem_of_neverdying"))) {
                 MultiVersionUtil.registerAccessory(value, new TotemOfNeverdyingAccessory());
@@ -35,7 +36,7 @@ public class TotemOfNeverdyingAccessory implements SlotCopyingAccessory {
      * @param event ModifyRegistriesEvent.
      */
     @SubscribeEvent
-    public static void clientInit(ModifyRegistriesEvent event) {
+    public static void clientInit(@NotNull ModifyRegistriesEvent event) {
         event.getRegistry(Registries.ITEM).addCallback((AddCallback<Item>) (registry, id, key, value) -> {
             if (key.location().equals(MultiVersionUtil.parse("netheriteextras:totem_of_neverdying"))) {
                 AccessoriesRendererRegistry.registerNoRenderer(value);
