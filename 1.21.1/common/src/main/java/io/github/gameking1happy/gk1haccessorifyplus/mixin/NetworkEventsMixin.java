@@ -7,15 +7,16 @@ import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.ModifyArg;
 
-import static io.github.gameking1happy.gk1hcore.compat.CompatFlags.*;
+import static io.github.gameking1happy.gk1hcore.compat.CompatFlags.GK1HTags;
+import static io.github.gameking1happy.gk1hcore.compat.CompatFlags.ReinfShu;
 
 /**
  * Has correct box size given instead of always 27.
  */
 @Mixin(NetworkEvents.class)
-public class ModNetworkingMixin {
+public class NetworkEventsMixin {
     @ModifyArg(method = "openShulkerBox(Lnet/minecraft/server/level/ServerPlayer;I)V",
-    at = @At(value = "INVOKE", target = "Lme/pajic/accessorify/menu/ShulkerBoxAccessoryContainerMenu;<init>(Lnet/minecraft/world/item/ItemStack;I)V"))
+            at = @At(value = "INVOKE", target = "Lme/pajic/accessorify/menu/ShulkerBoxAccessoryContainerMenu;<init>(Lnet/minecraft/world/item/ItemStack;I)V"))
     private static int boxSize(ItemStack shulker, int size) {
         return (ReinfShu && GK1HTags) ? ReinfShulkerCompat.getInventorySizeForReinfShulker(shulker.getItem()) : size;
     }

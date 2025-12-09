@@ -44,7 +44,8 @@
   },
   "suggests": {
     "netheriteextras": ">=${netheriteextras_version}",
-    "reinfshulker": ">=${rsb_version}"
+    "reinfshulker": ">=${rsb_version}",
+    "gk1htags": ">=${gk1htags_version}"
   },
   "custom": {
     "modmenu": {
@@ -62,7 +63,8 @@
         "java@>=${java_version}#(ignore)",
         "gk1hcore@>=${gk1hcore_version}(required){modrinth:gk1h-core}{curseforge:1384685}",
         "netheriteextras@>=${netheriteextras_version}(optional){modrinth:netherite-extras}{curseforge:1079904}",
-        "reinfshulker@>=${rsb_version}(optional){modrinth:reinforced-shulker-boxes}{curseforge:529874}"
+        "reinfshulker@>=${rsb_version}(optional){modrinth:reinforced-shulker-boxes}{curseforge:529874}",
+        "gk1htags@>=${gk1htags_version}(optional){modrinth:gk1h-tags}{curseforge:1389964}"
       ]
     }
   }

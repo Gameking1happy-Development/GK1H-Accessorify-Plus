@@ -7,7 +7,9 @@
   "package": "io.github.gameking1happy.gk1haccessorifyplus.mixin",
   "plugin": "com.moulberry.mixinconstraints.ConstraintsMixinPlugin",
   "compatibilityLevel": "JAVA_21",
-  "mixins": [],
+  "mixins": [
+    "ShulkerBoxAccessoryContainerMenuMixin"
+  ],
   "client": [],
   "server": [],
   "injectors": {

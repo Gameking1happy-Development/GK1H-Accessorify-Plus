@@ -4,10 +4,9 @@ import io.github.gameking1happy.gk1hcore.packs.AddPacks;
 import me.pajic.accessorify.Accessorify;
 import org.jetbrains.annotations.NotNull;
 
+import static io.github.gameking1happy.gk1haccessorifyplus.Main.MOD_ID;
 import static io.github.gameking1happy.gk1hcore.compat.CompatFlags.*;
 import static io.github.gameking1happy.gk1hcore.packs.AddPackPreset.addCDP;
-import static io.github.gameking1happy.gk1haccessorifyplus.Main.*;
-import static io.github.gameking1happy.gk1hcore.platform.Services.PLATFORM;
 import static me.pajic.accessorify.config.SlotMode.UNIQUE_SLOT;
 
 /**
@@ -19,7 +18,7 @@ public class Packs implements AddPacks {
      * @param modContainerOrEvent ModContainer for Fabric, AddPackFindersEvent for NeoForge.
      */
     public void addPacks(@NotNull Object modContainerOrEvent) {
-        if (PLATFORM.getPlatformName().equals("NeoForge") && ReinfShu && GK1HTags && Accessorify.CONFIG.accessorySettings.shulkerBoxAccessory.get()) {
+        if (ReinfShu && GK1HTags && Accessorify.CONFIG.accessorySettings.shulkerBoxAccessory.get()) {
             addCDP(modContainerOrEvent, getModID(), "reinfshulker");
         }
     }
