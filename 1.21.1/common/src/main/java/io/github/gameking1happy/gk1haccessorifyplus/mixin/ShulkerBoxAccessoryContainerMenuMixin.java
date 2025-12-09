@@ -13,7 +13,6 @@ import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;
-import org.spongepowered.asm.mixin.injection.ModifyArg;
 
 import static io.github.gameking1happy.gk1hcore.compat.CompatFlags.*;
 
@@ -36,10 +35,5 @@ public class ShulkerBoxAccessoryContainerMenuMixin {
     at = @At("RETURN"))
     public @Nullable AbstractContainerMenu RSBreturn(AbstractContainerMenu original, int i, @NotNull Inventory inventory, @NotNull Player player) {
         return (ReinfShu && GK1HTags) ? ReinfShulkerCompat.createMenu(i, inventory, (ShulkerBoxAccessoryContainerMenu) (Object) this, shulker.getItem()) : original;
-    }
-    @ModifyArg(method = "<init>(Lnet/minecraft/world/item/ItemStack;)V",
-    at = @At(value = "INVOKE", target = "Lnet/minecraft/core/NonNullList;withSize(ILjava/lang/Object;)Lnet/minecraft/core/NonNullList;"))
-    private int boxSize(int size) {
-        return (ReinfShu && GK1HTags) ? ReinfShulkerCompat.getInventorySizeForReinfShulker(shulker.getItem()) : size;
     }
 }

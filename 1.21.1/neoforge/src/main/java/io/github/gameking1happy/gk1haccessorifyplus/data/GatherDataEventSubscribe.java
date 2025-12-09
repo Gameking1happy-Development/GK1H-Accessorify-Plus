@@ -1,7 +1,5 @@
 package io.github.gameking1happy.gk1haccessorifyplus.data;
 
-import io.github.gameking1happy.gk1haccessorifyplus.data.netheriteextras.ToNDefaultItemTagsProvider;
-import io.github.gameking1happy.gk1haccessorifyplus.data.netheriteextras.ToNUniqueItemTagsProvider;
 import io.github.gameking1happy.gk1haccessorifyplus.data.reinfshulker.ReinfShulkerItemTagsProvider;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.DataGenerator;
@@ -29,15 +27,11 @@ public class GatherDataEventSubscribe {
     public static void gatherData(@NotNull GatherDataEvent event) {
         DataGenerator generator = event.getGenerator();
         PackOutput output = generator.getPackOutput();
-        PackOutput ToNDefaultOutput = generator.getPackOutput("default/totemofneverdying");
-        PackOutput ToNUniqueOutput = generator.getPackOutput("unique/totemofneverdying");
         PackOutput ReinfShulkerOutput = generator.getPackOutput("reinfshulker");
         ExistingFileHelper existingFileHelper = event.getExistingFileHelper();
         CompletableFuture<HolderLookup.Provider> lookupProvider = event.getLookupProvider();
         BlockTagsProvider blockTagsProvider = new MyBlockTagsProvider(output, lookupProvider, existingFileHelper);
         generator.addProvider(event.includeServer(), blockTagsProvider);
-        generator.addProvider(event.includeServer(), new ToNDefaultItemTagsProvider(ToNDefaultOutput, lookupProvider, blockTagsProvider.contentsGetter(), existingFileHelper));
-        generator.addProvider(event.includeServer(), new ToNUniqueItemTagsProvider(ToNUniqueOutput, lookupProvider, blockTagsProvider.contentsGetter(), existingFileHelper));
         generator.addProvider(event.includeServer(), new ReinfShulkerItemTagsProvider(ReinfShulkerOutput, lookupProvider, blockTagsProvider.contentsGetter(), existingFileHelper));
     }
 }

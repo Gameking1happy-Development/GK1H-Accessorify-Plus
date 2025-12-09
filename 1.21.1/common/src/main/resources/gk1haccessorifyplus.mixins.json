@@ -8,12 +8,10 @@
   "plugin": "com.moulberry.mixinconstraints.ConstraintsMixinPlugin",
   "compatibilityLevel": "JAVA_18",
   "mixins": [
-    "ModUtilMixin",
-    "netheriteextras.ModEventsMixin"
+    "ModNetworkingMixin",
+    "ShulkerBoxAccessoryContainerMenuMixin"
   ],
-  "client": [
-    "netheriteextras.TotemFloatingDisplayMixin"
-  ],
+  "client": [],
   "server": [],
   "injectors": {
     "defaultRequire": 1

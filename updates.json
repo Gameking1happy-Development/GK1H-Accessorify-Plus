@@ -3,10 +3,11 @@
   "1.21.1": {
     "21.1.1.0": "Release.",
     "21.1.1.0-hotfix": "Fix Netherite Extras compat crashing in unique slot mode due to forgetting path variable.",
-    "21.1.1.1": "Minor changes."
+    "21.1.1.1": "Minor changes.",
+    "21.1.2.0": "Removed Netherite Extras compat and added Reinforced Shulker Boxes compat to Fabric due to changes to Accessorify."
   },
   "promos": {
-    "1.21.1-latest": "21.1.1.1",
-    "1.21.1-recommended": "21.1.1.1"
+    "1.21.1-latest": "21.1.2.0",
+    "1.21.1-recommended": "21.1.2.0"
   }
 }

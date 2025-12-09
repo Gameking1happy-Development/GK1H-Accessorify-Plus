@@ -1,7 +1,7 @@
 package io.github.gameking1happy.gk1haccessorifyplus.packs;
 
 import io.github.gameking1happy.gk1hcore.packs.AddPacks;
-import me.pajic.accessorify.Main;
+import me.pajic.accessorify.Accessorify;
 import org.jetbrains.annotations.NotNull;
 
 import static io.github.gameking1happy.gk1hcore.compat.CompatFlags.*;
@@ -19,10 +19,7 @@ public class Packs implements AddPacks {
      * @param modContainerOrEvent ModContainer for Fabric, AddPackFindersEvent for NeoForge.
      */
     public void addPacks(@NotNull Object modContainerOrEvent) {
-        if (NetExt && Main.CONFIG.accessorySettings.totemOfUndyingAccessory.get()) {
-            addCDP(modContainerOrEvent, getModID(), prependPath("totemofneverdying"));
-        }
-        if (PLATFORM.getPlatformName().equals("NeoForge") && ReinfShu && GK1HTags && Main.CONFIG.accessorySettings.shulkerBoxAccessory.get()) {
+        if (PLATFORM.getPlatformName().equals("NeoForge") && ReinfShu && GK1HTags && Accessorify.CONFIG.accessorySettings.shulkerBoxAccessory.get()) {
             addCDP(modContainerOrEvent, getModID(), "reinfshulker");
         }
     }
@@ -33,7 +30,7 @@ public class Packs implements AddPacks {
      * @return Prepends with "unique/" if {@link me.pajic.accessorify.config.SlotMode#UNIQUE_SLOT}, otherwise prepends with "default/".
      */
     public static @NotNull String prependPath(@NotNull String path) {
-        return (Main.CONFIG.slotMode.get() == UNIQUE_SLOT) ? "unique/" + path : "default/" + path;
+        return (Accessorify.CONFIG.slotMode.get() == UNIQUE_SLOT) ? "unique/" + path : "default/" + path;
     }
     /**
      * @return Returns the mod ID.
