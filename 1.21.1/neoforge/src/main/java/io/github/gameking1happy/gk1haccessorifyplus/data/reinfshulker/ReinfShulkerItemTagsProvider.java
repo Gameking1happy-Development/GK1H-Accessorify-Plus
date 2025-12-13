@@ -10,8 +10,8 @@ import org.jetbrains.annotations.NotNull;
 import java.util.concurrent.CompletableFuture;
 
 import static io.github.gameking1happy.gk1haccessorifyplus.Main.MOD_ID;
-import static io.github.gameking1happy.gk1hcore.data.CoreData.ITKC;
-import static io.github.gameking1happy.gk1htags.registry.ItemTag.AllReinfShulker;
+import static io.github.gameking1happy.gk1hcore.data.CoreData.itkc;
+import static io.github.gameking1happy.gk1htags.registry.ItemTag.ALL_REINF_SHULKER;
 
 /**
  * ReinfShulker Item tags datagen.
@@ -32,6 +32,6 @@ public class ReinfShulkerItemTagsProvider extends ItemTagsProvider {
     }
     @Override
     protected void addTags(HolderLookup.@NotNull Provider lookupProvider) {
-        tag(ITKC("accessories","shulker")).addOptionalTag(AllReinfShulker);
+        tag(itkc("accessories","shulker")).addOptionalTag(ALL_REINF_SHULKER);
     }
 }

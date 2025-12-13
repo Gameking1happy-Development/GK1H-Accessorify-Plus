@@ -8,6 +8,7 @@
   "plugin": "com.moulberry.mixinconstraints.ConstraintsMixinPlugin",
   "compatibilityLevel": "JAVA_18",
   "mixins": [
+    "NetworkEventsMixin",
     "ShulkerBoxAccessoryContainerMenuMixin"
   ],
   "client": [],

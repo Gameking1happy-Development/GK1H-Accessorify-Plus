@@ -27,11 +27,11 @@ public class GatherDataEventSubscribe {
     public static void gatherData(@NotNull GatherDataEvent event) {
         DataGenerator generator = event.getGenerator();
         PackOutput output = generator.getPackOutput();
-        PackOutput ReinfShulkerOutput = generator.getPackOutput("reinfshulker");
+        PackOutput reinfShulkerOutput = generator.getPackOutput("reinfshulker");
         ExistingFileHelper existingFileHelper = event.getExistingFileHelper();
         CompletableFuture<HolderLookup.Provider> lookupProvider = event.getLookupProvider();
         BlockTagsProvider blockTagsProvider = new MyBlockTagsProvider(output, lookupProvider, existingFileHelper);
         generator.addProvider(event.includeServer(), blockTagsProvider);
-        generator.addProvider(event.includeServer(), new ReinfShulkerItemTagsProvider(ReinfShulkerOutput, lookupProvider, blockTagsProvider.contentsGetter(), existingFileHelper));
+        generator.addProvider(event.includeServer(), new ReinfShulkerItemTagsProvider(reinfShulkerOutput, lookupProvider, blockTagsProvider.contentsGetter(), existingFileHelper));
     }
 }

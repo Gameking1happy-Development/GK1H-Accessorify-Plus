@@ -14,8 +14,7 @@ import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;
 
-import static io.github.gameking1happy.gk1hcore.compat.CompatFlags.GK1HTags;
-import static io.github.gameking1happy.gk1hcore.compat.CompatFlags.ReinfShu;
+import static io.github.gameking1happy.gk1hcore.compat.CompatFlags.*;
 
 /**
  * Menu compat.
@@ -34,7 +33,7 @@ public class ShulkerBoxAccessoryContainerMenuMixin {
      */
     @ModifyReturnValue(method = "createMenu(ILnet/minecraft/world/entity/player/Inventory;Lnet/minecraft/world/entity/player/Player;)Lnet/minecraft/world/inventory/AbstractContainerMenu;",
     at = @At("RETURN"))
-    public @Nullable AbstractContainerMenu RSBreturn(AbstractContainerMenu original, int i, @NotNull Inventory inventory, @NotNull Player player) {
-        return (ReinfShu && GK1HTags) ? ReinfShulkerCompat.createMenu(i, inventory, (ShulkerBoxAccessoryContainerMenu) (Object) this, shulker.getItem()) : original;
+    public @Nullable AbstractContainerMenu rsbReturn(AbstractContainerMenu original, int i, @NotNull Inventory inventory, @NotNull Player player) {
+        return (REINF_SHU && GK1H_TAGS) ? ReinfShulkerCompat.createMenu(i, inventory, (ShulkerBoxAccessoryContainerMenu) (Object) this, shulker.getItem()) : original;
     }
 }

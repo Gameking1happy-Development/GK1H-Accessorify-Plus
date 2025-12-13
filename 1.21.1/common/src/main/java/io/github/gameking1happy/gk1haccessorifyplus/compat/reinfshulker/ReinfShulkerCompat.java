@@ -30,13 +30,13 @@ public class ReinfShulkerCompat {
     }
 
     /**
-     * @param syncId I'm going to be real here IDK.
+     * @param syncID I'm going to be real here IDK.
      * @param inventory Inventory.
      * @param menu Menu.
      * @param shulker Shulker.
      * @return Menu.
      */
-    public static @NotNull AbstractContainerMenu createMenu(int syncId, Inventory inventory, ShulkerBoxAccessoryContainerMenu menu, Item shulker) {
+    public static @NotNull AbstractContainerMenu createMenu(int syncID, Inventory inventory, ShulkerBoxAccessoryContainerMenu menu, Item shulker) {
         ReinforcingMaterial material = null;
         for (Map.Entry<ReinforcingMaterial, Map<DyeColor, Item>> entry : ModItems.REINFORCED_SHULKER_BOX_MAP.entrySet()) {
             if (entry.getValue().containsValue(shulker)) {
@@ -44,6 +44,6 @@ public class ReinfShulkerCompat {
                 break;
             }
         }
-        return material != null ? ReinforcedStorageScreenHandler.createShulkerBoxScreen(material, syncId, inventory, menu) : new ShulkerBoxMenu(syncId, inventory, menu);
+        return material != null ? ReinforcedStorageScreenHandler.createShulkerBoxScreen(material, syncID, inventory, menu) : new ShulkerBoxMenu(syncID, inventory, menu);
     }
 }
